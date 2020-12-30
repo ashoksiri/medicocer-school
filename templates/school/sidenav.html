@@ -1,0 +1,58 @@
+<aside class="bg-white">
+            <!-- START Sidebar-->
+            <div class="sidebar-wrapper">
+                <div data-ui-sidebar="" class="sidebar">
+                    <div class="sidebar-nav">
+                        <ul class="nav">
+                            <!-- Iterates over all sidebar items-->
+                            <li class="nav-heading">
+                                <span class="text-muted">Main Navigation</span>
+                            </li>
+{#                            <li>#}
+{#                                <a href="dashboard.html" title="Dashboard" data-ripple="">#}
+{#                                    <div class="label pull-right label-success">4</div>#}
+{#                                    <em class="sidebar-item-icon icon-pie-graph"></em>#}
+{#                                    <span>Splash Board</span>#}
+{#                                </a>#}
+{#                            </li>#}
+                            <li>
+                                <hr>
+                            </li>
+                            {% if user.is_principal %}
+                            <li>
+                                <a href="{% if request.path != '/school/teachers/' %} {% url 'school:teachers' %} {% else %} javascript:viod(0) {% endif %}" title="Albums" data-ripple="">
+                                    <em class="sidebar-item-icon fa fa-bullseye"></em>
+                                    <span>Teachers</span>
+                                </a>
+                            </li>
+                                {% endif %}
+                        {% if user.is_principal or user.is_teacher %}
+                            <li>
+                                <a href="{% if request.path != '/school/students/' %} {% url 'school:students' %} {% else %} javascript:viod(0) {% endif %}" title="Albums" data-ripple="">
+                                    <em class="sidebar-item-icon fa fa-music"></em>
+                                    <span>Students</span>
+                                </a>
+                            </li>
+                        {% endif %}
+                        {% if user.is_student %}
+                            <li>
+                                <a href="{% if request.path != '/school/songs/' %} {% url 'school:songs' %} {% else %} javascript:viod(0) {% endif %}" title="Albums" data-ripple="">
+                                    <em class="sidebar-item-icon fa fa-music"></em>
+                                    <span>Books</span>
+                                </a>
+                            </li>
+                        {% endif %}
+                            <!-- <li>
+                                <a href="dashboard.html" title="Genere" data-ripple="">
+                                    <em class="sidebar-item-icon fa fa-group"></em>
+                                    <span>Genere</span>
+                                </a>
+                            </li> -->
+
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- END Sidebar-->
+        </aside>

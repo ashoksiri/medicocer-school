@@ -1,0 +1,171 @@
+{% extends 'base.html' %} {% block content %}
+    {% load  static %}
+    <body>
+    <div class="app-container">
+        <!-- top navbar-->
+        <header class="bg-primary">
+            <!-- START Top Navbar-->
+            {% include 'school/navbar.html' %}
+            <!-- END Top Navbar-->
+        </header>
+        {% include 'school/sidenav.html' %}
+        <section>
+        <div style="background:url(app/img/profile.jpg) center center; background-size:cover;" class="unwrap">
+            <div class="container container-lg p-lg">
+                <div class="pull-right">
+                    <button type="button" class="btn btn-amber">Follow</button>
+                </div>
+                <div class="media mt-lg">
+                    <div class="media-left media-middle">
+                        <a href="javascript:void(0)">
+                            <img src="{% static 'school/images/user/02.jpg' %}" class="media-object thumb96 img-circle">
+                        </a>
+                    </div>
+                    <div class="media-body text-white">
+                        <h2 class="mv-lg media-heading">{{ user.username }}</h2>
+                        <button type="button" class="btn btn-info btn-xs mr-sm">
+                            <em class="fa fa-twitter fa-fw"></em>
+                        </button>
+                        <button type="button" class="btn btn-primary btn-xs mr-sm">
+                            <em class="fa fa-facebook fa-fw"></em>
+                        </button>
+                        <button type="button" class="btn btn-danger btn-xs">
+                            <em class="fa fa-google-plus fa-fw"></em>
+                        </button>
+                    </div>
+                </div>
+                <div class="text-right text-white pb-lg">
+                    <p class="m0">
+                        <strong>2k followers</strong>
+                    </p>
+                    <p class="m0">
+                        <strong>1.3k following</strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="container container-lg">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="panel">
+                        <div class="panel-body">
+                            <h3>{{ user.username }}</h3>
+                            {% if user.is_principal %}
+                                <p><strong>Principal </strong></p>
+                            {% elif user.is_teacher %}
+                                <p><strong>Teacher</strong> for <strong>{{ user.tclass }}</strong></p>
+                            {% else %}
+                                <p><strong>Student</strong> from <strong>{{ user.tclass }}</strong></p>
+                            {% endif %}
+
+                            <p>It is a long established fact that a reader will be distracted.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <div class="panel">
+                        <div ng-controller="GoogleMapController as gmap" class="panel-body">
+                            <uib-tabset>
+                                <uib-tab heading="Activity" select="refreshMap()">
+                                    <!-- START timeline-->
+                                    <ul class="timeline-alt">
+                                        <li data-datetime="14 Oct" class="timeline-separator"></li>
+                                        <!-- START timeline item-->
+                                        <li>
+                                            <div class="timeline-badge timeline-badge-sm thumb-32 bg-purple">
+                                                <em class="fa fa-users"></em>
+                                            </div>
+                                            <div class="timeline-date">
+                                                <time datetime="10m"></time>
+                                            </div>
+                                            <div class="timeline-panel">
+                                                <strong>Client Meeting</strong>
+                                                <div class="text-muted">Green Offfice - Av 123 St Floor 2</div>
+                                                <div id="map_canvas" ui-map="gmap.myMap" ui-options="gmap.mapOptions"
+                                                     class="gmap"></div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <!-- END timeline-->
+                                </uib-tab>
+                            </uib-tabset>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </section>
+    </div>
+    </body>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).on('click', '.browse', function () {
+                var file = $(this).parent().parent().parent().find('.file');
+                file.trigger('click');
+            });
+            $(document).on('change', '.file', function () {
+                $(this).parent().find('.form-control').val($(this).val().replace(/C:\\fakepath\\/i, ''));
+            });
+
+            $(document).on('ready', function () {
+
+                //$('.album-card2').append(($('.album-card')[0]).cloneNode());
+                $(function () {
+                    // Setup the player to autoplay the next track
+                    var a = audiojs.createAll({
+                        trackEnded: function () {
+                            var next = $('ol li.playing').next();
+                            if (!next.length) next = $('ol li').first();
+                            next.addClass('playing').siblings().removeClass('playing');
+                            audio.load($('a', next).attr('data-src'));
+                            audio.play();
+                        }
+                    });
+
+                    // Load in the first track
+                    var audio = a[0];
+                    first = $('ol a').attr('data-src');
+                    $('ol li').first().addClass('playing');
+                    audio.load(first);
+
+                    // Load in a track on click
+                    $('ol li').click(function (e) {
+                        e.preventDefault();
+                        $(this).addClass('playing').siblings().removeClass('playing');
+                        audio.load($('a', this).attr('data-src'));
+                        audio.play();
+                    });
+                    // Keyboard shortcuts
+                    $(document).keydown(function (e) {
+                        var unicode = e.charCode ? e.charCode : e.keyCode;
+                        // right arrow
+                        if (unicode == 39) {
+                            var next = $('li.playing').next();
+                            if (!next.length) next = $('ol li').first();
+                            next.click();
+                            // back arrow
+                        } else if (unicode == 37) {
+                            var prev = $('li.playing').prev();
+                            if (!prev.length) prev = $('ol li').last();
+                            prev.click();
+                            // spacebar
+                        } else if (unicode == 32) {
+                            audio.playPause();
+                        }
+                    })
+                });
+            });
+
+            $('.sidebar-toggle-off').on('click', function () {
+                if ($('body').hasClass("aside-offscreen")) {
+                    $('.album-card2').css("padding-right", "5rem");
+                } else {
+                    $('.album-card2').css("padding-right", "0rem");
+                }
+
+            });
+
+        }, false);
+
+    </script> {% endblock %}

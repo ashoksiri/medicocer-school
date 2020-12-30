@@ -1,0 +1,30 @@
+{% extends 'base.html'%} {% block content%}
+
+<body>
+    <div class="animated fadeOutZoom">
+        <div class="container container-sm animated fadeInDown">
+            <div class="center-block mt-xl">
+                <!-- START panel-->
+                <h3 style="text-align:center">Medicover School</h3>
+                <div class="panel">
+                    <div class="panel-body">
+                        <p class="pv text-bold">LOGIN CREDENTIALS</p>
+                        <div class="form-group has-error">
+                            <label class="control-label" style="color:coral">{{ error_message }}</label>
+                        </div>
+
+                        <form role="form" class="mb-lg" method="post" action="{% url 'school:login' %}">
+                            {% csrf_token %} {% include 'school/form_login.html' %}
+                        </form>
+                    </div>
+                </div>
+                <div class="text-center mt"><a href="javascript:void(0)" class="text-muted">Forgot your password?</a></div>
+                <!-- END panel-->
+                <div class="p-lg text-center">
+                    <hr><span class="mr-sm">&copy; </span><span class="mr-sm">2015</span><span>Naut</span><br>Bootstrap + AngularJS
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+{% endblock %}

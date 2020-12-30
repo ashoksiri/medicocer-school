@@ -1,0 +1,25 @@
+<div class="row">
+    <div class="col-md-6">
+
+        {% for field in form %}
+        <div class="form-group has-feedback mb">
+            {{ field }} {% if field.html_name == "username" %}
+            <span class="fa fa-user form-control-feedback text-muted"></span> {% elif field.html_name == "password" %}
+            <span class="fa fa-lock form-control-feedback text-muted"></span> {% endif %}
+        </div>
+        <div class="form-group has-error" style="color:red">
+            {{ field.errors }}
+        </div>
+
+        {% endfor %}
+        <div class="checkbox c-checkbox pull-left mt0">
+            <label>
+<input type="checkbox" value=""><span class="fa fa-check"></span> Remember me
+</label>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <button type="submit" class="btn btn-block btn-info mb">Login</button>
+        <p class="text-muted mb0">Don't have an account yet?</p><a href="{% url 'school:register' %}" class="btn btn-block btn-default"><strong>Register one</strong></a>
+    </div>
+</div>

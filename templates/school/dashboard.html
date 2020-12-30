@@ -1,0 +1,854 @@
+{%extends 'base.html'%} {% block content %}
+
+<body>
+    <!-- Main container-->
+    <div class="app-container">
+        <!-- top navbar-->
+        <header class="bg-primary">
+            <!-- START Top Navbar-->
+            {% include 'school/navbar.html' %}
+            <!-- END Top Navbar-->
+        </header>
+        <!-- Sidebar-->
+        {% include 'school/sidenav.html' %}
+        <!-- Main-->
+        <section>
+            <!-- Content-->
+            <div class="app">
+                <div class="app-view-header">
+                    {% if user.is_principal %}Teachers {% endif %}
+                    <small> Naut - Bootstrap + AngularJS</small></div>
+                <div class="row">
+                    <!-- START dashboard content-->
+                    <div class="col-lg-9 fw-boxed">
+                        <!-- START Tabbed panel-->
+
+                        <div class="row">
+                            <div class="col-md-3 col-xs-6">
+                                <!-- START Panel-->
+                                <div data-chained-animation="fadeInUp" class="panel panel-card panel-card-image bg-warning animated fadeInUp" style="animation-delay: 0.19s;
+                                background-image: url(https://www.filmibeat.com/img/popcorn/movie_posters/jai-simha-tel-20171102110715-3708.jpg);
+                                max-height: 200px;
+                                min-height: 150px;
+                                min-width: 150px;
+                                max-width: 200px;">
+                                    <div class="panel-body text-center">
+                                        <h4 class="text-white">Agenda</h4>
+                                        <h2 class="text-lg text-white"> 21 march</h2><small class="text-white">(5) Pending assignments.</small>
+                                    </div>
+                                </div>
+                                <!-- END Panel-->
+                            </div>
+                            <div class="col-md-3 col-xs-6">
+                                <!-- START Panel-->
+                                <div data-chained-animation="fadeInUp" class="panel panel-card panel-card-image bg-warning animated fadeInUp" style="animation-delay: 0.19s;
+                                    background-image: url(https://www.filmibeat.com/img/popcorn/movie_posters/jai-simha-tel-20171102110715-3708.jpg);
+                                    max-height: 200px;
+                                    min-height: 150px;
+                                    min-width: 150px;
+                                    max-width: 200px;">
+                                    <div class="panel-body text-center">
+                                        <h4 class="text-white">Agenda</h4>
+                                        <h2 class="text-lg text-white"> 21 march</h2><small class="text-white">(5) Pending assignments.</small>
+                                    </div>
+                                </div>
+                                <!-- END Panel-->
+                            </div>
+                            <div class="col-md-3 col-xs-6">
+                                <!-- START Panel-->
+                                <div data-chained-animation="fadeInUp" class="panel panel-card panel-card-image bg-warning animated fadeInUp" style="animation-delay: 0.19s;
+                                    background-image: url(https://www.filmibeat.com/img/popcorn/movie_posters/jai-simha-tel-20171102110715-3708.jpg);
+                                    max-height: 200px;
+                                    min-height: 150px;
+                                    min-width: 150px;
+                                    max-width: 200px;">
+                                    <div class="panel-body text-center">
+                                        <h4 class="text-white">Agenda</h4>
+                                        <h2 class="text-lg text-white"> 21 march</h2><small class="text-white">(5) Pending assignments.</small>
+                                    </div>
+                                </div>
+                                <!-- END Panel-->
+                            </div>
+                            <div class="col-md-3 col-xs-6">
+                                <!-- START Panel-->
+                                <div data-chained-animation="fadeInUp" class="panel panel-card panel-card-image bg-warning animated fadeInUp" style="animation-delay: 0.19s;
+                                        background-image: url(https://ia.media-imdb.com/images/M/MV5BMjQ1MjFkN2EtOTU4NS00NDkzLThhNzItODkzYWNjZDMxZjE0XkEyXkFqcGdeQXVyNTgxODY5ODI@._V1_UY268_CR3,0,182,268_AL_.jpg);
+                                        max-height: 200px;
+                                        min-height: 150px;
+                                        min-width: 150px;
+                                        max-width: 200px;">
+                                    <div class="panel-body text-center">
+                                        <h4 class="text-white">Agenda</h4>
+                                        <h2 class="text-lg text-white"> 21 march</h2><small class="text-white">(5) Pending assignments.</small>
+                                    </div>
+                                </div>
+                                <!-- END Panel-->
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3 col-xs-6">
+                                <!-- START Panel-->
+                                <div data-chained-animation="fadeInUp" class="panel panel-card panel-card-image bg-warning animated fadeInUp" style="animation-delay: 0.19s;
+                                    background-image: url(https://ia.media-imdb.com/images/M/MV5BMjQ1MjFkN2EtOTU4NS00NDkzLThhNzItODkzYWNjZDMxZjE0XkEyXkFqcGdeQXVyNTgxODY5ODI@._V1_UY268_CR3,0,182,268_AL_.jpg);
+                                    max-height: 200px;
+                                    min-height: 150px;
+                                    min-width: 150px;
+                                    max-width: 200px;">
+                                    <div class="panel-body text-center">
+                                        <h4 class="text-white">Agenda</h4>
+                                        <h2 class="text-lg text-white"> 21 march</h2><small class="text-white">(5) Pending assignments.</small>
+                                    </div>
+                                </div>
+                                <!-- END Panel-->
+                            </div>
+                            <div class="col-md-3 col-xs-6">
+                                <!-- START Panel-->
+                                <div data-chained-animation="fadeInUp" class="panel panel-card panel-card-image bg-warning animated fadeInUp" style="animation-delay: 0.19s;
+                                        background-image: url(https://ia.media-imdb.com/images/M/MV5BMjQ1MjFkN2EtOTU4NS00NDkzLThhNzItODkzYWNjZDMxZjE0XkEyXkFqcGdeQXVyNTgxODY5ODI@._V1_UY268_CR3,0,182,268_AL_.jpg);
+                                        max-height: 200px;
+                                        min-height: 150px;
+                                        min-width: 150px;
+                                        max-width: 200px;">
+                                    <div class="panel-body text-center">
+                                        <h4 class="text-white">Agenda</h4>
+                                        <h2 class="text-lg text-white"> 21 march</h2><small class="text-white">(5) Pending assignments.</small>
+                                    </div>
+                                </div>
+                                <!-- END Panel-->
+                            </div>
+                            <div class="col-md-3 col-xs-6">
+                                <!-- START Panel-->
+                                <div data-chained-animation="fadeInUp" class="panel panel-card panel-card-image bg-warning animated fadeInUp" style="animation-delay: 0.19s;
+                                        background-image: url(https://ia.media-imdb.com/images/M/MV5BMjQ1MjFkN2EtOTU4NS00NDkzLThhNzItODkzYWNjZDMxZjE0XkEyXkFqcGdeQXVyNTgxODY5ODI@._V1_UY268_CR3,0,182,268_AL_.jpg);
+                                        max-height: 200px;
+                                        min-height: 150px;
+                                        min-width: 150px;
+                                        max-width: 200px;">
+                                    <div class="panel-body text-center">
+                                        <h4 class="text-white">Agenda</h4>
+                                        <h2 class="text-lg text-white"> 21 march</h2><small class="text-white">(5) Pending assignments.</small>
+                                    </div>
+                                </div>
+                                <!-- END Panel-->
+                            </div>
+                            <div class="col-md-3 col-xs-6">
+                                <!-- START Panel-->
+                                <div data-chained-animation="fadeInUp" class="panel panel-card panel-card-image bg-warning animated fadeInUp" style="animation-delay: 0.19s;
+                                            background-image: url(https://ia.media-imdb.com/images/M/MV5BMjQ1MjFkN2EtOTU4NS00NDkzLThhNzItODkzYWNjZDMxZjE0XkEyXkFqcGdeQXVyNTgxODY5ODI@._V1_UY268_CR3,0,182,268_AL_.jpg);
+                                            max-height: 200px;
+                                            min-height: 150px;
+                                            min-width: 150px;
+                                            max-width: 200px;">
+                                    <div class="panel-body text-center">
+                                        <h4 class="text-white">Agenda</h4>
+                                        <h2 class="text-lg text-white"> 21 march</h2><small class="text-white">(5) Pending assignments.</small>
+                                    </div>
+                                </div>
+                                <!-- END Panel-->
+                            </div>
+
+                        </div>
+                        <div class="app-view-header">Top Hits<small> Naut - Bootstrap + AngularJS</small></div>
+                        <div class="row">
+                            <div class="col-md-3 col-xs-6">
+                                <!-- START Panel-->
+                                <div data-chained-animation="fadeInUp" class="panel panel-card panel-card-image bg-warning animated fadeInUp" style="animation-delay: 0.19s;
+                                    background-image: url(https://www.filmibeat.com/img/popcorn/movie_posters/jai-simha-tel-20171102110715-3708.jpg);
+                                    max-height: 200px;
+                                    min-height: 150px;
+                                    min-width: 150px;
+                                    max-width: 200px;">
+                                    <div class="panel-body text-center">
+                                        <h4 class="text-white">Agenda</h4>
+                                        <h2 class="text-lg text-white"> 21 march</h2><small class="text-white">(5) Pending assignments.</small>
+                                    </div>
+                                </div>
+                                <!-- END Panel-->
+                            </div>
+                            <div class="col-md-3 col-xs-6">
+                                <!-- START Panel-->
+                                <div data-chained-animation="fadeInUp" class="panel panel-card panel-card-image bg-warning animated fadeInUp" style="animation-delay: 0.19s;
+                                        background-image: url(https://www.filmibeat.com/img/popcorn/movie_posters/jai-simha-tel-20171102110715-3708.jpg);
+                                        max-height: 200px;
+                                        min-height: 150px;
+                                        min-width: 150px;
+                                        max-width: 200px;">
+                                    <div class="panel-body text-center">
+                                        <h4 class="text-white">Agenda</h4>
+                                        <h2 class="text-lg text-white"> 21 march</h2><small class="text-white">(5) Pending assignments.</small>
+                                    </div>
+                                </div>
+                                <!-- END Panel-->
+                            </div>
+                            <div class="col-md-3 col-xs-6">
+                                <!-- START Panel-->
+                                <div data-chained-animation="fadeInUp" class="panel panel-card panel-card-image bg-warning animated fadeInUp" style="animation-delay: 0.19s;
+                                        background-image: url(https://www.filmibeat.com/img/popcorn/movie_posters/jai-simha-tel-20171102110715-3708.jpg);
+                                        max-height: 200px;
+                                        min-height: 150px;
+                                        min-width: 150px;
+                                        max-width: 200px;">
+                                    <div class="panel-body text-center">
+                                        <h4 class="text-white">Agenda</h4>
+                                        <h2 class="text-lg text-white"> 21 march</h2><small class="text-white">(5) Pending assignments.</small>
+                                    </div>
+                                </div>
+                                <!-- END Panel-->
+                            </div>
+                            <div class="col-md-3 col-xs-6">
+                                <!-- START Panel-->
+                                <div data-chained-animation="fadeInUp" class="panel panel-card panel-card-image bg-warning animated fadeInUp" style="animation-delay: 0.19s;
+                                            background-image: url(https://ia.media-imdb.com/images/M/MV5BMjQ1MjFkN2EtOTU4NS00NDkzLThhNzItODkzYWNjZDMxZjE0XkEyXkFqcGdeQXVyNTgxODY5ODI@._V1_UY268_CR3,0,182,268_AL_.jpg);
+                                            max-height: 200px;
+                                            min-height: 150px;
+                                            min-width: 150px;
+                                            max-width: 200px;">
+                                    <div class="panel-body text-center">
+                                        <h4 class="text-white">Agenda</h4>
+                                        <h2 class="text-lg text-white"> 21 march</h2><small class="text-white">(5) Pending assignments.</small>
+                                    </div>
+                                </div>
+                                <!-- END Panel-->
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3 col-xs-6">
+                                <!-- START Panel-->
+                                <div data-chained-animation="fadeInUp" class="panel panel-card panel-card-image bg-warning animated fadeInUp" style="animation-delay: 0.19s;
+                                        background-image: url(https://ia.media-imdb.com/images/M/MV5BMjQ1MjFkN2EtOTU4NS00NDkzLThhNzItODkzYWNjZDMxZjE0XkEyXkFqcGdeQXVyNTgxODY5ODI@._V1_UY268_CR3,0,182,268_AL_.jpg);
+                                        max-height: 200px;
+                                        min-height: 150px;
+                                        min-width: 150px;
+                                        max-width: 200px;">
+                                    <div class="panel-body text-center">
+                                        <h4 class="text-white">Agenda</h4>
+                                        <h2 class="text-lg text-white"> 21 march</h2><small class="text-white">(5) Pending assignments.</small>
+                                    </div>
+                                </div>
+                                <!-- END Panel-->
+                            </div>
+                            <div class="col-md-3 col-xs-6">
+                                <!-- START Panel-->
+                                <div data-chained-animation="fadeInUp" class="panel panel-card panel-card-image bg-warning animated fadeInUp" style="animation-delay: 0.19s;
+                                            background-image: url(https://ia.media-imdb.com/images/M/MV5BMjQ1MjFkN2EtOTU4NS00NDkzLThhNzItODkzYWNjZDMxZjE0XkEyXkFqcGdeQXVyNTgxODY5ODI@._V1_UY268_CR3,0,182,268_AL_.jpg);
+                                            max-height: 200px;
+                                            min-height: 150px;
+                                            min-width: 150px;
+                                            max-width: 200px;">
+                                    <div class="panel-body text-center">
+                                        <h4 class="text-white">Agenda</h4>
+                                        <h2 class="text-lg text-white"> 21 march</h2><small class="text-white">(5) Pending assignments.</small>
+                                    </div>
+                                </div>
+                                <!-- END Panel-->
+                            </div>
+                            <div class="col-md-3 col-xs-6">
+                                <!-- START Panel-->
+                                <div data-chained-animation="fadeInUp" class="panel panel-card panel-card-image bg-warning animated fadeInUp" style="animation-delay: 0.19s;
+                                            background-image: url(https://ia.media-imdb.com/images/M/MV5BMjQ1MjFkN2EtOTU4NS00NDkzLThhNzItODkzYWNjZDMxZjE0XkEyXkFqcGdeQXVyNTgxODY5ODI@._V1_UY268_CR3,0,182,268_AL_.jpg);
+                                            max-height: 200px;
+                                            min-height: 150px;
+                                            min-width: 150px;
+                                            max-width: 200px;">
+                                    <div class="panel-body text-center">
+                                        <h4 class="text-white">Agenda</h4>
+                                        <h2 class="text-lg text-white"> 21 march</h2><small class="text-white">(5) Pending assignments.</small>
+                                    </div>
+                                </div>
+                                <!-- END Panel-->
+                            </div>
+                            <div class="col-md-3 col-xs-6">
+                                <!-- START Panel-->
+                                <div data-chained-animation="fadeInUp" class="panel panel-card panel-card-image bg-warning animated fadeInUp" style="animation-delay: 0.19s;
+                                                background-image: url(https://ia.media-imdb.com/images/M/MV5BMjQ1MjFkN2EtOTU4NS00NDkzLThhNzItODkzYWNjZDMxZjE0XkEyXkFqcGdeQXVyNTgxODY5ODI@._V1_UY268_CR3,0,182,268_AL_.jpg);
+                                                max-height: 200px;
+                                                min-height: 150px;
+                                                min-width: 150px;
+                                                max-width: 200px;">
+                                    <div class="panel-body text-center">
+                                        <h4 class="text-white">Agenda</h4>
+                                        <h2 class="text-lg text-white"> 21 march</h2><small class="text-white">(5) Pending assignments.</small>
+                                    </div>
+                                </div>
+                                <!-- END Panel-->
+                            </div>
+
+                        </div>
+                        <!-- START Panel-->
+                        <div class="app-view-header">Favourites<small> Naut - Bootstrap + AngularJS</small></div>
+                        <div class="row">
+                            <div class="col-md-3 col-xs-6">
+                                <!-- START Panel-->
+                                <div data-chained-animation="fadeInUp" class="panel panel-card panel-card-image bg-warning animated fadeInUp" style="animation-delay: 0.19s;
+                                    background-image: url(https://www.filmibeat.com/img/popcorn/movie_posters/jai-simha-tel-20171102110715-3708.jpg);
+                                    max-height: 200px;
+                                    min-height: 150px;
+                                    min-width: 150px;
+                                    max-width: 200px;">
+                                    <div class="panel-body text-center">
+                                        <h4 class="text-white">Agenda</h4>
+                                        <h2 class="text-lg text-white"> 21 march</h2><small class="text-white">(5) Pending assignments.</small>
+                                    </div>
+                                </div>
+                                <!-- END Panel-->
+                            </div>
+                            <div class="col-md-3 col-xs-6">
+                                <!-- START Panel-->
+                                <div data-chained-animation="fadeInUp" class="panel panel-card panel-card-image bg-warning animated fadeInUp" style="animation-delay: 0.19s;
+                                        background-image: url(https://www.filmibeat.com/img/popcorn/movie_posters/jai-simha-tel-20171102110715-3708.jpg);
+                                        max-height: 200px;
+                                        min-height: 150px;
+                                        min-width: 150px;
+                                        max-width: 200px;">
+                                    <div class="panel-body text-center">
+                                        <h4 class="text-white">Agenda</h4>
+                                        <h2 class="text-lg text-white"> 21 march</h2><small class="text-white">(5) Pending assignments.</small>
+                                    </div>
+                                </div>
+                                <!-- END Panel-->
+                            </div>
+                            <div class="col-md-3 col-xs-6">
+                                <!-- START Panel-->
+                                <div data-chained-animation="fadeInUp" class="panel panel-card panel-card-image bg-warning animated fadeInUp" style="animation-delay: 0.19s;
+                                        background-image: url(https://www.filmibeat.com/img/popcorn/movie_posters/jai-simha-tel-20171102110715-3708.jpg);
+                                        max-height: 200px;
+                                        min-height: 150px;
+                                        min-width: 150px;
+                                        max-width: 200px;">
+                                    <div class="panel-body text-center">
+                                        <h4 class="text-white">Agenda</h4>
+                                        <h2 class="text-lg text-white"> 21 march</h2><small class="text-white">(5) Pending assignments.</small>
+                                    </div>
+                                </div>
+                                <!-- END Panel-->
+                            </div>
+                            <div class="col-md-3 col-xs-6">
+                                <!-- START Panel-->
+                                <div data-chained-animation="fadeInUp" class="panel panel-card panel-card-image bg-warning animated fadeInUp" style="animation-delay: 0.19s;
+                                            background-image: url(https://ia.media-imdb.com/images/M/MV5BMjQ1MjFkN2EtOTU4NS00NDkzLThhNzItODkzYWNjZDMxZjE0XkEyXkFqcGdeQXVyNTgxODY5ODI@._V1_UY268_CR3,0,182,268_AL_.jpg);
+                                            max-height: 200px;
+                                            min-height: 150px;
+                                            min-width: 150px;
+                                            max-width: 200px;">
+                                    <div class="panel-body text-center">
+                                        <h4 class="text-white">Agenda</h4>
+                                        <h2 class="text-lg text-white"> 21 march</h2><small class="text-white">(5) Pending assignments.</small>
+                                    </div>
+                                </div>
+                                <!-- END Panel-->
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3 col-xs-6">
+                                <!-- START Panel-->
+                                <div data-chained-animation="fadeInUp" class="panel panel-card panel-card-image bg-warning animated fadeInUp" style="animation-delay: 0.19s;
+                                        background-image: url(https://ia.media-imdb.com/images/M/MV5BMjQ1MjFkN2EtOTU4NS00NDkzLThhNzItODkzYWNjZDMxZjE0XkEyXkFqcGdeQXVyNTgxODY5ODI@._V1_UY268_CR3,0,182,268_AL_.jpg);
+                                        max-height: 200px;
+                                        min-height: 150px;
+                                        min-width: 150px;
+                                        max-width: 200px;">
+                                    <div class="panel-body text-center">
+                                        <h4 class="text-white">Agenda</h4>
+                                        <h2 class="text-lg text-white"> 21 march</h2><small class="text-white">(5) Pending assignments.</small>
+                                    </div>
+                                </div>
+                                <!-- END Panel-->
+                            </div>
+                            <div class="col-md-3 col-xs-6">
+                                <!-- START Panel-->
+                                <div data-chained-animation="fadeInUp" class="panel panel-card panel-card-image bg-warning animated fadeInUp" style="animation-delay: 0.19s;
+                                            background-image: url(https://ia.media-imdb.com/images/M/MV5BMjQ1MjFkN2EtOTU4NS00NDkzLThhNzItODkzYWNjZDMxZjE0XkEyXkFqcGdeQXVyNTgxODY5ODI@._V1_UY268_CR3,0,182,268_AL_.jpg);
+                                            max-height: 200px;
+                                            min-height: 150px;
+                                            min-width: 150px;
+                                            max-width: 200px;">
+                                    <div class="panel-body text-center">
+                                        <h4 class="text-white">Agenda</h4>
+                                        <h2 class="text-lg text-white"> 21 march</h2><small class="text-white">(5) Pending assignments.</small>
+                                    </div>
+                                </div>
+                                <!-- END Panel-->
+                            </div>
+                            <div class="col-md-3 col-xs-6">
+                                <!-- START Panel-->
+                                <div data-chained-animation="fadeInUp" class="panel panel-card panel-card-image bg-warning animated fadeInUp" style="animation-delay: 0.19s;
+                                            background-image: url(https://ia.media-imdb.com/images/M/MV5BMjQ1MjFkN2EtOTU4NS00NDkzLThhNzItODkzYWNjZDMxZjE0XkEyXkFqcGdeQXVyNTgxODY5ODI@._V1_UY268_CR3,0,182,268_AL_.jpg);
+                                            max-height: 200px;
+                                            min-height: 150px;
+                                            min-width: 150px;
+                                            max-width: 200px;">
+                                    <div class="panel-body text-center">
+                                        <h4 class="text-white">Agenda</h4>
+                                        <h2 class="text-lg text-white"> 21 march</h2><small class="text-white">(5) Pending assignments.</small>
+                                    </div>
+                                </div>
+                                <!-- END Panel-->
+                            </div>
+                            <div class="col-md-3 col-xs-6">
+                                <!-- START Panel-->
+                                <div data-chained-animation="fadeInUp" class="panel panel-card panel-card-image bg-warning animated fadeInUp" style="animation-delay: 0.19s;
+                                                background-image: url(https://ia.media-imdb.com/images/M/MV5BMjQ1MjFkN2EtOTU4NS00NDkzLThhNzItODkzYWNjZDMxZjE0XkEyXkFqcGdeQXVyNTgxODY5ODI@._V1_UY268_CR3,0,182,268_AL_.jpg);
+                                                max-height: 200px;
+                                                min-height: 150px;
+                                                min-width: 150px;
+                                                max-width: 200px;">
+                                    <div class="panel-body text-center">
+                                        <h4 class="text-white">Agenda</h4>
+                                        <h2 class="text-lg text-white"> 21 march</h2><small class="text-white">(5) Pending assignments.</small>
+                                    </div>
+                                </div>
+                                <!-- END Panel-->
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                    <!-- END dashboard content-->
+                    <!-- START dashboard sidebar-->
+                    <aside class="col-lg-3 fw-boxed">
+                        <div class="row">
+                            <div class="col-lg-6 col-sm-3 col-xs-6">
+                                <div data-ripple="" class="panel panel-default">
+                                    <div class="panel-body bg-primary">
+                                        <h1 class="text-thin mt">150</h1>
+                                        <div class="text-right text-sm text-muted">Transactions</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-sm-3 col-xs-6">
+                                <div data-ripple="" class="panel panel-default">
+                                    <div class="panel-body">
+                                        <h1 class="text-thin mt">700</h1>
+                                        <div class="text-right text-sm text-muted">Users</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-sm-3 col-xs-6">
+                                <div data-ripple="" class="panel panel-default">
+                                    <div class="panel-body">
+                                        <h1 class="text-thin mt">699</h1>
+                                        <div class="text-right text-sm text-muted">Views</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-sm-3 col-xs-6">
+                                <div data-ripple="" class="panel panel-default">
+                                    <div class="panel-body bg-primary">
+                                        <h1 class="text-thin mt">96</h1>
+                                        <div class="text-right text-sm text-muted">Downloads</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12">
+                                <div class="panel panel-default">
+                                    <div class="panel-body bg-primary">
+                                        <h2 class="text-thin mt">New contacts</h2>
+                                        <div class="clearfix">
+                                            <div class="pull-right">
+                                                <ul class="list-inline m0">
+                                                    <li class="p0">
+                                                        <a href="#"><img src="/static/school/images/user/02.jpg" alt="Follower" class="img-responsive img-circle thumb24"></a>
+                                                    </li>
+                                                    <li class="p0">
+                                                        <a href="#"><img src="/static/school/images/user/01.jpg" alt="Follower" class="img-responsive img-circle thumb24"></a>
+                                                    </li>
+                                                    <li class="p0">
+                                                        <a href="#"><img src="/static/school/images/user/03.jpg" alt="Follower" class="img-responsive img-circle thumb24"></a>
+                                                    </li>
+                                                    <li class="p0">
+                                                        <a href="#"><img src="/static/school/images/user/04.jpg" alt="Follower" class="img-responsive img-circle thumb24"></a>
+                                                    </li>
+                                                    <li class="p0"><a href="#" class="v-middle"><strong>+7</strong></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12 col-md-6">
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading">
+                                        <div class="panel-title bg-primary"><em class="icon-clock fa-lg pull-right text-muted"></em>Activity</div>
+                                    </div>
+                                    <div class="panel-body pt0">
+                                        <div class="smoothy">
+                                            <div data-scrollable="" class="pt">
+                                                <!-- START timeline-->
+                                                <ul class="timeline-alt">
+                                                    <li data-datetime="14 Oct" class="timeline-separator"></li>
+                                                    <!-- START timeline item-->
+                                                    <li>
+                                                        <div class="timeline-badge timeline-badge-sm thumb-32 bg-purple"><em class="fa fa-users"></em></div>
+                                                        <div class="timeline-date">
+                                                            <time datetime="10m"></time>
+                                                        </div>
+                                                        <div class="timeline-panel"><strong>Client Meeting</strong>
+                                                            <div class="text-muted">Green Offfice - Av 123 St Floor 2</div>
+                                                        </div>
+                                                    </li>
+                                                    <!-- END timeline item-->
+                                                    <!-- START timeline item-->
+                                                    <li>
+                                                        <div class="timeline-badge timeline-badge-sm bg-amber"><em class="fa fa-phone"></em></div>
+                                                        <div class="timeline-date">
+                                                            <time datetime="1h"></time>
+                                                        </div>
+                                                        <div class="timeline-panel"><strong>Call</strong>
+                                                            <div class="text-muted">From: <a href="tel:+011231987">Michael</a>. <em> No message left.</em></div>
+                                                        </div>
+                                                    </li>
+                                                    <!-- END timeline item-->
+                                                    <!-- START timeline item-->
+                                                    <li>
+                                                        <div class="timeline-badge timeline-badge-sm bg-info"><em class="fa fa-envelope"></em></div>
+                                                        <div class="timeline-date">
+                                                            <time datetime="3h"></time>
+                                                        </div>
+                                                        <div class="timeline-panel"><strong>New invitation</strong>
+                                                            <div class="text-muted">From: <strong>UX Design Team</strong></div>
+                                                        </div>
+                                                    </li>
+                                                    <!-- END timeline item-->
+                                                    <li data-datetime="13 Oct" class="timeline-separator"></li>
+                                                    <!-- START timeline item-->
+                                                    <li>
+                                                        <div class="timeline-badge timeline-badge-sm bg-warning"><em class="fa fa-upload"></em></div>
+                                                        <div class="timeline-date">
+                                                            <time datetime="9am"></time>
+                                                        </div>
+                                                        <div class="timeline-panel"><strong>File upload</strong>
+                                                            <a href="#">
+                                                                <div class="text-bold">angular+bs.zip</div>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                    <!-- END timeline item-->
+                                                </ul>
+                                                <!-- END timeline-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-6">
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading">
+                                        <div class="panel-title bg-primary"><em class="icon-speech-bubble fa-lg pull-right text-muted"></em>Team chat</div>
+                                    </div>
+                                    <div class="panel-body pt0">
+                                        <div class="smoothy">
+                                            <div data-scrollable="" class="pt">
+                                                <ul class="chat">
+                                                    <li class="left clearfix"><span class="chat-img pull-left"><img src="/static/school/images/user/01.jpg" alt="Image" class="img-circle thumb48"></span>
+                                                        <div class="chat-body clearfix">
+                                                            <div class="chat-header"><a href="#" class="text-inverse"><strong>Florence Douglas</strong></a><small class="pull-right text-muted"><span class="fa fa-time"></span>12m</small></div>
+                                                            <div class="chat-msg">Suspendisse nisl nulla, interdum at fermentum eget, adipiscing in elit. </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="right clearfix"><span class="chat-img pull-right"><img src="/static/school/images/user/03.jpg" alt="Image" class="img-circle thumb48"></span>
+                                                        <div class="chat-body clearfix">
+                                                            <div class="chat-header"><small class="text-muted"><span class="fa fa-time"></span>13m</small><a href="#" class="text-inverse"><strong class="pull-right">Jon Elliott</strong></a></div>
+                                                            <div class="chat-msg">Donec consequat venenatis orci, et sagittis risus pretium eget. </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="left clearfix"><span class="chat-img pull-left"><img src="/static/school/images/user/02.jpg" alt="Image" class="img-circle thumb48"></span>
+                                                        <div class="chat-body clearfix">
+                                                            <div class="chat-header"><a href="#" class="text-inverse"><strong>Joel Miles</strong></a><small class="pull-right text-muted"><span class="fa fa-time"></span>14m</small></div>
+                                                            <div class="chat-msg">Mauris eleifend, libero nec cursus lacinia, tellus est pharetra orci, et pretium urna felis eget neque. </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="right clearfix"><span class="chat-img pull-right"><img src="/static/school/images/user/03.jpg" alt="Image" class="img-circle thumb48"></span>
+                                                        <div class="chat-body clearfix">
+                                                            <div class="chat-header"><small class="text-muted"><span class="fa fa-time"></span>15m</small><a href="#" class="text-inverse"><strong class="pull-right">Jon Elliott</strong></a></div>
+                                                            <div class="chat-msg">Sed semper diam vitae purus tristique at scelerisque massa ultricies. Aliquam non eros dui. </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel-footer">
+                                        <div class="input-group input-group-sm">
+                                            <input type="text" placeholder="Type a message ..." class="form-control"><span class="input-group-btn">
+                          <button type="button" class="btn btn-info"><small>Post</small></button></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </aside>
+                    <!-- END dashboard sidebar-->
+                </div>
+            </div>
+        </section>
+        <!-- Page footer-->
+        <footer><span>&copy; 2015 - Application Name</span></footer>
+    </div>
+    <!-- Settings-->
+    <!-- <div class="settings-wrapper">
+        <div class="settings-inner">
+            <div class="settings-button"><em class="icon-cog"></em></div>
+            <div class="settings">
+                <div class="settings-inner">
+                    <div class="settings-content">
+                        <div class="pt ph">
+                            <p class="text-muted">THEMES</p>
+                            <div class="clearfix mb">
+                                <div class="pull-left wd-tiny mb">
+                                    <div class="setting-color">
+                                        <label>
+                        <input type="radio" name="setting-theme" value="0"><span class="icon-check"></span><span class="list-table"><span class="bg-white"></span><span class="bg-primary"></span><span class="bg-primary"></span></span>
+                      </label>
+                                    </div>
+                                </div>
+                                <div class="pull-left wd-tiny mb">
+                                    <div class="setting-color">
+                                        <label>
+                        <input type="radio" name="setting-theme" value="1"><span class="icon-check"></span><span class="list-table"><span class="bg-white"></span><span class="bg-purple"></span><span class="bg-purple"></span></span>
+                      </label>
+                                    </div>
+                                </div>
+                                <div class="pull-left wd-tiny mb">
+                                    <div class="setting-color">
+                                        <label>
+                        <input type="radio" name="setting-theme" value="2"><span class="icon-check"></span><span class="list-table"><span class="bg-white"></span><span class="bg-success"></span><span class="bg-success"></span></span>
+                      </label>
+                                    </div>
+                                </div>
+                                <div class="pull-left wd-tiny mb">
+                                    <div class="setting-color">
+                                        <label>
+                        <input type="radio" name="setting-theme" value="3"><span class="icon-check"></span><span class="list-table"><span class="bg-white"></span><span class="bg-warning"></span><span class="bg-warning"></span></span>
+                      </label>
+                                    </div>
+                                </div>
+                                <div class="pull-left wd-tiny mb">
+                                    <div class="setting-color">
+                                        <label>
+                        <input type="radio" name="setting-theme" value="4"><span class="icon-check"></span><span class="list-table"><span class="bg-white"></span><span class="bg-info"></span><span class="bg-info"></span></span>
+                      </label>
+                                    </div>
+                                </div>
+                                <div class="pull-left wd-tiny mb">
+                                    <div class="setting-color">
+                                        <label>
+                        <input type="radio" name="setting-theme" value="5"><span class="icon-check"></span><span class="list-table"><span class="bg-white"></span><span class="bg-danger"></span><span class="bg-danger"></span></span>
+                      </label>
+                                    </div>
+                                </div>
+                                <div class="pull-left wd-tiny mb">
+                                    <div class="setting-color">
+                                        <label>
+                        <input type="radio" name="setting-theme" value="6"><span class="icon-check"></span><span class="list-table"><span class="bg-white"></span><span class="bg-pink"></span><span class="bg-pink"></span></span>
+                      </label>
+                                    </div>
+                                </div>
+                                <div class="pull-left wd-tiny mb">
+                                    <div class="setting-color">
+                                        <label>
+                        <input type="radio" name="setting-theme" value="7"><span class="icon-check"></span><span class="list-table"><span class="bg-white"></span><span class="bg-amber"></span><span class="bg-amber"></span></span>
+                      </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="p">
+                            <p class="text-muted">LAYOUT</p>
+                            <div class="clearfix">
+                                <p class="pull-left">Fixed</p>
+                                <div class="pull-right">
+                                    <label class="switch switch-info">
+                      <input id="layoutisfixed" type="checkbox"><span></span>
+                    </label>
+                                </div>
+                            </div>
+                            <div class="clearfix">
+                                <p class="pull-left">Boxed</p>
+                                <div class="pull-right">
+                                    <label class="switch switch-info">
+                      <input id="layoutisboxed" type="checkbox"><span></span>
+                    </label>
+                                </div>
+                            </div>
+                            <div class="clearfix">
+                                <p class="pull-left">Material</p>
+                                <div class="pull-right">
+                                    <label class="switch switch-info">
+                      <input id="layoutismaterial" type="checkbox"><span></span>
+                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p">
+                            <p class="text-muted">SIDEBAR</p>
+                            <div class="clearfix">
+                                <p class="pull-left">Mini</p>
+                                <div class="pull-right">
+                                    <label class="switch switch-info">
+                      <input id="sidebarismini" type="checkbox"><span></span>
+                    </label>
+                                </div>
+                            </div>
+                            <div class="clearfix">
+                                <p class="pull-left">Right</p>
+                                <div class="pull-right">
+                                    <label class="switch switch-info">
+                      <input id="sidebarisright" type="checkbox"><span></span>
+                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p">
+                            <p class="text-muted">FOOTER</p>
+                            <div class="clearfix">
+                                <p class="pull-left">Hidden</p>
+                                <div class="pull-right">
+                                    <label class="switch switch-info">
+                      <input id="footerhidden" type="checkbox"><span></span>
+                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <!-- End Settings-->
+    <!-- Layer Morph-->
+    <div class="layer-morph-overlay">
+        <div class="layer-morph-inner bg-info"></div>
+    </div>
+    <div class="layer-morph-close"><em class="icon-cross"></em></div>
+    <div class="layer-morph-container bg-info">
+        <div class="layer-morph-wrapper">
+            <div id="layer-search" class="layer-morph">
+                <form action="#">
+                    <p class="help-block">Type and hit enter to search</p>
+                    <input type="text" placeholder="I'm looking for..." class="form-control input-huge">
+                    <button type="submit" class="hidden">Search</button>
+                </form>
+                <div class="row">
+                    <div class="col-md-4 col-sm-6 pv">
+                        <h4 class="text-bold pv-lg">People (4)</h4><br>
+                        <ul class="list-unstyled">
+                            <!-- START User-->
+                            <li class="media">
+                                <div class="media-left media-middle">
+                                    <!-- Contact avatar-->
+                                    <div class="point-pin">
+                                        <a href="#"><img src="/static/school/images/user/05.jpg" alt="Image" class="media-object img-circle thumb40"></a>
+                                        <div class="point point-success point-lg"></div>
+                                    </div>
+                                </div>
+                                <!-- Contact info-->
+                                <div class="media-body">
+                                    <div class="media-heading"><a href="#" class="text-md">Marc Fuller</a></div>
+                                </div>
+                            </li>
+                            <!-- END User-->
+                            <!-- START User-->
+                            <li>
+                                <hr>
+                            </li>
+                            <li class="media">
+                                <div class="media-left media-middle">
+                                    <!-- Contact avatar-->
+                                    <div class="point-pin">
+                                        <a href="#"><img src="/static/school/images/user/06.jpg" alt="Image" class="media-object img-circle thumb40"></a>
+                                        <div class="point point-success point-lg"></div>
+                                    </div>
+                                </div>
+                                <!-- Contact info-->
+                                <div class="media-body">
+                                    <div class="media-heading"><a href="#" class="text-md">Wade Wade</a></div>
+                                </div>
+                            </li>
+                            <!-- END User-->
+                            <!-- START User-->
+                            <li>
+                                <hr>
+                            </li>
+                            <li class="media">
+                                <div class="media-left media-middle">
+                                    <!-- Contact avatar-->
+                                    <div class="point-pin">
+                                        <a href="#"><img src="/static/school/images/user/07.jpg" alt="Image" class="media-object img-circle thumb40"></a>
+                                        <div class="point point-danger point-lg"></div>
+                                    </div>
+                                </div>
+                                <!-- Contact info-->
+                                <div class="media-body">
+                                    <div class="media-heading"><a href="#" class="text-md">Alan Boyd</a></div>
+                                </div>
+                            </li>
+                            <!-- END User-->
+                            <!-- START User-->
+                            <li>
+                                <hr>
+                            </li>
+                            <li class="media">
+                                <div class="media-left media-middle">
+                                    <!-- Contact avatar-->
+                                    <div class="point-pin">
+                                        <a href="#"><img src="/static/school/images/user/01.jpg" alt="Image" class="media-object img-circle thumb40"></a>
+                                        <div class="point point-danger point-lg"></div>
+                                    </div>
+                                </div>
+                                <!-- Contact info-->
+                                <div class="media-body">
+                                    <div class="media-heading"><a href="#" class="text-md">Ryan Carr</a></div>
+                                </div>
+                            </li>
+                            <!-- END User-->
+                        </ul>
+                    </div>
+                    <div class="col-md-4 col-sm-6 pv">
+                        <h4 class="text-bold pv-lg">Pages (3)</h4><br>
+                        <ul class="list-unstyled">
+                            <li class="media">
+                                <div class="media-left media-middle">
+                                    <div class="thumb40 bg-success circle text-center text-bold">D</div>
+                                </div>
+                                <div class="media-body">
+                                    <div class="media-heading clearfix"><a href="dashboard.html" data-layer-morph-close="" class="pull-left text-md">Dashboard</a><small class="text-muted pull-right mt">3 matches</small></div>
+                                </div>
+                            </li>
+                            <li>
+                                <hr>
+                            </li>
+                            <li class="media">
+                                <div class="media-left media-middle">
+                                    <div class="thumb40 bg-purple circle text-center text-bold">P</div>
+                                </div>
+                                <div class="media-body">
+                                    <div class="media-heading clearfix"><a href="extras.profile.html" data-layer-morph-close="" class="pull-left text-md">Profile</a><small class="text-muted pull-right mt">3 matches</small></div>
+                                </div>
+                            </li>
+                            <li>
+                                <hr>
+                            </li>
+                            <li class="media">
+                                <div class="media-left media-middle">
+                                    <div class="thumb40 bg-danger circle text-center text-bold">P</div>
+                                </div>
+                                <div class="media-body">
+                                    <div class="media-heading clearfix"><a href="extras.projects.html" data-layer-morph-close="" class="pull-left text-md">Projects</a><small class="text-muted pull-right mt">2 match(es)</small></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="layer-morph-footer">Naut</div>
+        </div>
+    </div>
+</body>
+{% endblock %}

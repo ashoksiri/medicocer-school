@@ -1,0 +1,28 @@
+<div class="row">
+    <div class="col-md-6">
+        {% for field in form %}
+        <div class="form-group has-feedback">
+            {{ field }} {% if field.html_name == "username" %}
+            <span class="fa fa-user form-control-feedback text-muted"></span> {% elif field.html_name == "email" %}
+            <span class="fa fa-envelope form-control-feedback text-muted"></span> {% elif field.html_name == "password" %}
+            <span class="fa fa-lock form-control-feedback text-muted"></span> {% elif field.html_name == "confirm_password" %}
+            <span class="fa fa-lock form-control-feedback text-muted"></span> {% endif %}
+        </div>
+        <div class="form-group has-error" style="color:red">
+            {{ field.errors }}
+        </div>
+
+        {% endfor %}
+        <div class="clearfix">
+            <div class="checkbox c-checkbox pull-left mt0">
+                <label>
+                        <input type="checkbox" value=""><span class="fa fa-check"></span> I agree with the <a href="#">terms</a>
+                    </label>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <button type="submit" class="btn btn-block btn-primary">Create account</button><br>
+        <p class="pt-lg text-center mt-sm">Already register?</p><a href="{% url 'school:login'%}" class="btn btn-block btn-default"><strong>Login</strong></a>
+    </div>
+</div>

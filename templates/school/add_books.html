@@ -1,0 +1,260 @@
+{%extends 'base.html'%} {% block content %}
+{% load static %}
+<body>
+    <!-- Main container-->
+    <div class="app-container">
+        <!-- top navbar-->
+        <header class="bg-primary">
+            <!-- START Top Navbar-->
+            {% include 'school/navbar.html' %}
+            <!-- END Top Navbar-->
+        </header>
+        <!-- Sidebar-->
+       {% include 'school/sidenav.html' %}
+        <!-- Main-->
+
+
+        <section>
+            <!-- Content-->
+            <div class="app">
+            {%  if errors %}
+                <div class="text-gray-darker">
+                {{ errors }}
+                </div>
+            {% endif %}
+                <div class="container">
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="album_form" role="dialog">
+                        <div class="modal-dialog">
+
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Add Books</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div id="album-id-form" class="bg-white" style="padding-top: 5rem;margin-left: 15px;margin-right: 15px;padding-right: 2rem;padding-bottom: 1rem;">
+                                        <form method="post" action="{% url 'school:books' %}" class="form-horizontal" enctype="multipart/form-data">
+                                             {% csrf_token %}
+                                            <fieldset>
+                                                <div class="form-group">
+                                                    <label for="input-id-1" class="col-sm-2 control-label">Author</label>
+                                                    <div class="col-sm-10">
+                                                        <input id="input-id-1" name="name" type="text" class="form-control shadow-z1" required>
+                                                    </div>
+                                                </div>
+                                            </fieldset>
+                                            <fieldset>
+                                                <div class="form-group">
+                                                    <label for="input-id-1" class="col-sm-2 control-label">Class</label>
+                                                    <div class="col-sm-10">
+                                                        <input id="input-id-1" name="tclass" type="text" class="form-control shadow-z1" required>
+                                                    </div>
+                                                </div>
+                                            </fieldset>
+                                            <fieldset>
+                                                <div class="form-group">
+                                                    <label class="col-sm-2 control-label">Subject</label>
+                                                    <div class="col-sm-10">
+                                                        <input type="text" name="subject" class="form-control shadow-z1" required="required">
+                                                    </div>
+                                                </div>
+                                            </fieldset>
+                                            <div class="form-group text-center">
+                                                <button type="submit" class="mr btn btn-oval btn-default">Add</button>
+
+                                                <button type="button" class="mr btn btn-oval btn-default" data-dismiss="modal">Close</button>
+                                            </div>
+
+                                        </form>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="app-view-header col-md-12">
+                    <span class="text-left">Books</span>
+                    <span style="float:right">
+                        <button type="button" class="mr btn btn-lg btn-circle btn-primary" data-toggle="modal" data-target="#album_form">
+                            <em class="fa fa-plus"></em>
+                        </button>
+
+                    </span>
+
+                </div>
+
+                <div class="row">
+                    <!-- START dashboard content-->
+
+
+
+                    <div class="col-lg-6 fw-boxed" style="padding-top:1rem">
+                        <!-- START Tabbed panel-->
+
+
+                        <div class="row">
+
+                            {% for book in books %}
+                            <div class="col-md-4 col-xs-12">
+                                <!-- START Panel-->
+                                <div data-chained-animation="fadeInUp" class="album-card panel panel-card panel-card-image bg-warning animated fadeInUp"
+                                    style="
+                                background-image: url('/media/{{ teacher.profile_picture }}');
+                                " data-toggle="modal" data-target="#album_form_{{ loop.index }}">
+                                    <div class="panel-body text-center">
+                                        <h4 class="text-white">{{ book.subject}}</h4>
+                                        <h2 class="text-lg text-white"> {{ book.tclass }}</h2>
+                                        <small class="text-white">{{ book.name }}</small>
+                                    </div>
+                                </div>
+                                <div class="container">
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="album_form_{{ loop.index }}" role="dialog">
+                                        <div class="modal-dialog">
+
+                                            <!-- Modal content-->
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    <h4 class="modal-title">Book Details</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div>
+                                                    <h2>{{ book.subject }}</h2>
+                                                    <span>
+                                                        <strong>Class: </strong> {{ book.tclass }}. </p>
+                                                        </span>
+                                                            <strong>Author: </strong> {{ book.name }} </p>
+
+                                                    </div>
+                                                    <div class="text-center">
+                                                <figure>
+                                                    <img src="{{ teacher.profile_picture.url }}" height="200" width="200" alt="" class=" img-responsive">
+                                                    <figcaption class="ratings">
+                                                        <p>Ratings
+                                                            <a href="#">
+                                                                <span class="fa fa-star"></span>
+                                                            </a>
+                                                            <a href="#">
+                                                                <span class="fa fa-star"></span>
+                                                            </a>
+                                                            <a href="#">
+                                                                <span class="fa fa-star"></span>
+                                                            </a>
+                                                            <a href="#">
+                                                                <span class="fa fa-star"></span>
+                                                            </a>
+                                                            <a href="#">
+                                                                <span class="fa fa-star-o"></span>
+                                                            </a>
+                                                        </p>
+                                                    </figcaption>
+                                                </figure>
+                                            </div>
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <!-- END Panel-->
+                            </div>
+                            {% endfor %}
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!-- Page footer-->
+        <footer>
+            <span>&copy; 2015 - Application Name</span>
+        </footer>
+    </div>
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        $(document).on('click', '.browse', function () {
+            var file = $(this).parent().parent().parent().find('.file');
+            file.trigger('click');
+        });
+        $(document).on('change', '.file', function () {
+            $(this).parent().find('.form-control').val($(this).val().replace(/C:\\fakepath\\/i, ''));
+        });
+
+        $(document).on('ready', function () {
+
+            //$('.album-card2').append(($('.album-card')[0]).cloneNode());
+            $(function() { 
+        // Setup the player to autoplay the next track
+        var a = audiojs.createAll({
+          trackEnded: function() {
+            var next = $('ol li.playing').next();
+            if (!next.length) next = $('ol li').first();
+            next.addClass('playing').siblings().removeClass('playing');
+            audio.load($('a', next).attr('data-src'));
+            audio.play();
+          }
+        });
+        
+        // Load in the first track
+        var audio = a[0];
+            first = $('ol a').attr('data-src');
+        $('ol li').first().addClass('playing');
+        audio.load(first);
+
+        // Load in a track on click
+        $('ol li').click(function(e) {
+          e.preventDefault();
+          $(this).addClass('playing').siblings().removeClass('playing');
+          audio.load($('a', this).attr('data-src'));
+          audio.play();
+        });
+        // Keyboard shortcuts
+        $(document).keydown(function(e) {
+          var unicode = e.charCode ? e.charCode : e.keyCode;
+             // right arrow
+          if (unicode == 39) {
+            var next = $('li.playing').next();
+            if (!next.length) next = $('ol li').first();
+            next.click();
+            // back arrow
+          } else if (unicode == 37) {
+            var prev = $('li.playing').prev();
+            if (!prev.length) prev = $('ol li').last();
+            prev.click();
+            // spacebar
+          } else if (unicode == 32) {
+            audio.playPause();
+          }
+        })
+      });
+        });
+
+        $('.sidebar-toggle-off').on('click',function(){
+                if ($('body').hasClass("aside-offscreen")){
+                    $('.album-card2').css("padding-right","5rem");
+                }
+                else{
+                    $('.album-card2').css("padding-right","0rem");
+                }
+            
+        });
+
+    }, false);
+
+</script> {% endblock %}
