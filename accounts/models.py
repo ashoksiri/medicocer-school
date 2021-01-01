@@ -9,6 +9,7 @@ from django.utils.translation import ugettext_lazy as _
 from .managers import MyUserManager
 
 
+
 class User(AbstractBaseUser, PermissionsMixin):
     username = models.CharField(unique=True,null=True,max_length=20)
     email = models.EmailField(unique=True, null=True)
@@ -32,6 +33,8 @@ class User(AbstractBaseUser, PermissionsMixin):
             'Unselect this instead of deleting accounts.'
         ),
     )
+    created_by = models.ForeignKey('User', null=True, blank=True, on_delete=models.CASCADE)
+
     USERNAME_FIELD = 'email'
     objects = MyUserManager()
 
@@ -65,3 +68,6 @@ class Book(models.Model):
     tclass=models.CharField(max_length=30, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        unique_together = [('name','user')]

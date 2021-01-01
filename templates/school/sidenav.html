@@ -36,7 +36,7 @@
                         {% endif %}
                         {% if user.is_student %}
                             <li>
-                                <a href="{% if request.path != '/school/songs/' %} {% url 'school:songs' %} {% else %} javascript:viod(0) {% endif %}" title="Albums" data-ripple="">
+                                <a href="{% if request.path != '/school/books/' %} {% url 'school:books' %} {% else %} javascript:viod(0) {% endif %}" title="Albums" data-ripple="">
                                     <em class="sidebar-item-icon fa fa-music"></em>
                                     <span>Books</span>
                                 </a>

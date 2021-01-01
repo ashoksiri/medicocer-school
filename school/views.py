@@ -1,6 +1,7 @@
 from django.contrib.auth import authenticate, login
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
+from django.forms import model_to_dict
 from django.shortcuts import render
 
 from accounts.forms import LoginForm, UserForm, TeacherForm, StudentForm, BookForm
@@ -94,13 +95,41 @@ def profile(request):
     return render(request, 'school/profile.html')
 
 
+def get_teachers_with_students(loginuser):
+    users = User.objects.filter(is_teacher=True, created_by=loginuser)
+    teachers = []
+    for user in users:
+        teacher = model_to_dict(user)
+        students = [model_to_dict(student)
+                    for student in User.objects.filter(is_student=True, created_by=user)]
+        teacher['students'] = students
+        teachers.append(teacher)
+    return teachers
+
+
+def get_students_with_books(loginuser):
+    if loginuser.is_principal:
+        users = User.objects.filter(is_student=True,
+                                    created_by__in=User.objects.filter(is_teacher=True, created_by=loginuser))
+    else:
+        users = User.objects.filter(is_student=True, created_by=loginuser)
+    students = []
+    for user in users:
+        student = model_to_dict(user)
+        books = [model_to_dict(student)
+                    for student in Book.objects.filter(user=user)]
+        student['books'] = books
+        students.append(student)
+    return students
+
+
 @login_required
 def teachers(request):
     form = TeacherForm(request.POST or None)
 
     context = {
         "form": form,
-        'teachers': User.objects.filter(is_teacher=True)
+        'teachers': get_teachers_with_students(request.user)
     }
 
     if request.method == 'POST':
@@ -111,8 +140,12 @@ def teachers(request):
             teacher.set_password(password)
             teacher.is_principal = False
             teacher.profile_picture = request.FILES['profile_picture']
+            teacher.created_by = request.user
             teacher.save()
-            context.update({'teachers': User.objects.filter(is_teacher=True)})
+            context.update({'teachers': get_teachers_with_students(request.user)})
+        else:
+            context.update({'errors': form.errors})
+            return render(request, 'school/add_teacher.html', context)
 
     return render(request, 'school/add_teacher.html', context)
 
@@ -123,7 +156,7 @@ def students(request):
 
     context = {
         "form": form,
-        'teachers': User.objects.filter(is_student=True)
+        'students': get_students_with_books(request.user)
     }
 
     if request.method == 'POST':
@@ -134,8 +167,9 @@ def students(request):
             student.set_password(password)
             student.profile_picture = request.FILES['profile_picture']
             student.is_principal = False
+            student.created_by = request.user
             student.save()
-            context.update({'students': User.objects.filter(is_student=True)})
+            context.update({'students': get_students_with_books(request.user)})
         else:
             print(form.errors)
             context.update({'errors': form.errors})

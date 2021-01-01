@@ -50,7 +50,14 @@
                                                 <div class="form-group">
                                                     <label for="input-id-1" class="col-sm-2 control-label">Class</label>
                                                     <div class="col-sm-10">
-                                                        <input id="input-id-1" name="tclass" type="text" class="form-control shadow-z1" required>
+                                                        <select name="tclass" id="input-id-1" class="form-control shadow-z1">
+                                                            <option value="10th" selected>10th</option>
+                                                            <option value="9th">9th</option>
+                                                            <option value="8th">8th</option>
+                                                            <option value="7th">7th</option>
+                                                            <option value="6th">6th</option>
+                                                            <option value="5th">5th</option>
+                                                        </select>
                                                     </div>
                                                 </div>
                                             </fieldset>
@@ -106,7 +113,7 @@
                                 <!-- START Panel-->
                                 <div data-chained-animation="fadeInUp" class="album-card panel panel-card panel-card-image bg-warning animated fadeInUp"
                                     style="
-                                background-image: url('/media/{{ teacher.profile_picture }}');
+                                background-image: url('https://www.clker.com/cliparts/6/4/J/9/E/9/closed-book-hi.png');
                                 " data-toggle="modal" data-target="#album_form_{{ loop.index }}">
                                     <div class="panel-body text-center">
                                         <h4 class="text-white">{{ book.subject}}</h4>
